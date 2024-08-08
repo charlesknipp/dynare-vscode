@@ -1,0 +1,64 @@
+{
+  "name": "Dynare",
+  "scopeName": "source.dynare",
+  "fileTypes": ["mod"],
+  "patterns": [
+    {"include": "#keyword"},
+    {"include": "#comment"},
+    {"include": "#operator"},
+    {"include": "#string"},
+    {
+      "name": "constant.numeric.dynare",
+      "match": "\\b[[:digit:]]+(\\.[[:digit:]]*)?"
+    }
+  ],
+  "repository": {
+    "comment": {
+      "name": "comment.dynare",
+      "begin": "//",
+      "end": "$"
+    },
+    "keyword": {
+      "name": "keyword.control.dynare",
+      "match": "\\b(var|varexo|parameters|model|initval|shocks|stoch_simul|steady|check|end)\\b"
+    },
+    "operator": {
+      "patterns": [
+        {
+          "name": "keyword.operator.update.dynare",
+          "match": "="
+        },
+        {
+          "name": "keyword.operator.arithmetic.dynare",
+          "match": "(\\-|\\+|\\^|\\*|\\/)"
+        }
+      ]
+    },
+    "string": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.dynare",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.dynare",
+              "match": "\\\\(x[A-Fa-f0-9][A-Fa-f0-9]?|.)"
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.dynare",
+          "begin": "\\'",
+          "end": "\\'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.dynare",
+              "match": "\\\\(x[A-Fa-f0-9][A-Fa-f0-9]?|.)"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
