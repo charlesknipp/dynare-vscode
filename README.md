@@ -1,2 +1,2 @@
-# cahnc1.dynare-lang-0.0.1
-VS Code extension providing syntax highlighting for Dynare models, enhancing readability and coding efficiency.
+# Dynare for Visual Studio Code
+This extension provides syntax highlighting for Dynare models, enhancing readability and coding efficiency.
